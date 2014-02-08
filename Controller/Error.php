@@ -17,7 +17,6 @@ class Error extends Controller implements Interfaces\Controller
         $ViewManager = $this->getViewManager();
         $View = $ViewManager->getView('Index');
         $View->set('View.title', 'Error');
-        $View->set('View.body', '');
         parent::showException($Exception, $code);
         
     }

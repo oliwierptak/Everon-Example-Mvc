@@ -1,0 +1,25 @@
+{
+    "name": "everon/everon-example-mvc",
+    "description": "Mvc application example for Everon framework",
+    "license": "MIT",
+    "authors": [{
+        "name": "Oliwier Ptak",
+        "email": "oliwierptak@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "require": {
+        "everon/everon": "master",
+        "everon/everon-tests": "master",
+        "php": "~5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Everon\\": "vendor/everon/src/"
+        }
+    },
+    "repositories": [
+        { "type": "vcs", "url": "git@github.com-everon:oliwierptak/Everon.git" },
+        { "type": "vcs", "url": "git@github.com-everon:oliwierptak/Everon-Tests.git" }
+    ],
+    "require-all": true
+}

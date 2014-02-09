@@ -2,12 +2,12 @@
 namespace Everon;
 
 $nesting = implode('..', array_fill(0, 3, DIRECTORY_SEPARATOR));
-$everon_root =  realpath(dirname(__FILE__).$nesting).DIRECTORY_SEPARATOR;
-$everon_source_root = implode(DIRECTORY_SEPARATOR, [dirname(__FILE__), '..', '..', 'vendor', 'everon', 'src', 'Everon']).DIRECTORY_SEPARATOR;
+$EVERON_ROOT =  realpath(dirname(__FILE__).$nesting).DIRECTORY_SEPARATOR;
+$EVERON_SOURCE_ROOT = implode(DIRECTORY_SEPARATOR, [dirname(__FILE__), '..', '..', 'vendor', 'everon', 'src', 'Everon']).DIRECTORY_SEPARATOR;
 
 require_once(
     implode(DIRECTORY_SEPARATOR,
-        [$everon_source_root, 'Config', 'Bootstrap.php'])  
+        [$EVERON_SOURCE_ROOT, 'Config', 'Bootstrap.php'])  
 );
 
 /**

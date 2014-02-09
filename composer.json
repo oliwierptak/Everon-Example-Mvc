@@ -9,7 +9,6 @@
     "minimum-stability": "dev",
     "require": {
         "everon/everon": "master",
-        "everon/everon-tests": "master",
         "php": "~5.5"
     },
     "autoload": {
@@ -18,8 +17,7 @@
         }
     },
     "repositories": [
-        { "type": "vcs", "url": "git@github.com-everon:oliwierptak/Everon.git" },
-        { "type": "vcs", "url": "git@github.com-everon:oliwierptak/Everon-Tests.git" }
+        { "type": "vcs", "url": "git@github.com-everon:oliwierptak/Everon.git" }
     ],
     "require-all": true
 }

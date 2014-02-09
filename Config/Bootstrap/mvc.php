@@ -1,9 +1,13 @@
 <?php
 namespace Everon;
 
+$nesting = implode('..', array_fill(0, 3, DIRECTORY_SEPARATOR));
+$everon_root =  realpath(dirname(__FILE__).$nesting).DIRECTORY_SEPARATOR;
+$everon_source_root = implode(DIRECTORY_SEPARATOR, [dirname(__FILE__), '..', '..', 'vendor', 'everon', 'src', 'Everon']).DIRECTORY_SEPARATOR;
+
 require_once(
     implode(DIRECTORY_SEPARATOR,
-        [dirname(__FILE__), '..', '..', 'Src', 'Everon', 'Config', 'Bootstrap.php'])  
+        [$everon_source_root, 'Config', 'Bootstrap.php'])  
 );
 
 /**
@@ -13,7 +17,8 @@ require_once(
  * @var Interfaces\Factory $Factory
  */
 
-$Bootstrap->getClassLoader()->add('Everon', $Environment->getEveron());
+//$Bootstrap->getClassLoader()->add('Everon', $Environment->getRoot());
+//$Bootstrap->getClassLoader()->add('Everon', $Environment->getEveronRoot());
 
 $Bootstrap->getClassLoader()->add('Everon\Mvc\Controller', $Environment->getController());
 $Bootstrap->getClassLoader()->add('Everon\Domain', $Environment->getDomain());

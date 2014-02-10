@@ -18,6 +18,5 @@
     },
     "repositories": [
         { "type": "vcs", "url": "git@github.com-everon:oliwierptak/Everon.git" }
-    ],
-    "require-all": true
+    ]
 }

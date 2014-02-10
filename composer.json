@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Everon\\": "vendor/everon/src/"
+            "Everon\\": "vendor/everon/everon/src/"
         }
     },
     "repositories": [

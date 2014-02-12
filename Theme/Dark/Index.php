@@ -8,10 +8,10 @@ use Everon\View;
 class Index extends View
 {
     use Helper\Arrays;
-    
-    public function __construct($template_directory, array $vars, Interfaces\Template $IndexContainer, $default_extension)
+
+    public function __construct($template_directory, array $vars, $default_extension)
     {
         $vars['AdminMenuItems'] = [];
-        parent::__construct($template_directory, $vars, $IndexContainer, $default_extension);
+        parent::__construct($template_directory, $vars, $default_extension);
     }
 }

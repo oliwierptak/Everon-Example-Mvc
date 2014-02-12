@@ -9,11 +9,11 @@ class Error extends DefaultView
 {
     public function show()
     {
-        $this->getView()->set('error', 'the error message');
+        $this->set('error', 'the error message');
     }
     
     public function test()
     {
-        $this->getView()->set('View.Body', 'no template: test error');
+        $this->set('View.Body', 'no template: test error');
     }
 }

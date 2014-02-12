@@ -17,13 +17,10 @@ require_once(
  * @var Interfaces\Factory $Factory
  */
 
-//$Bootstrap->getClassLoader()->add('Everon', $Environment->getRoot());
-//$Bootstrap->getClassLoader()->add('Everon', $Environment->getEveronRoot());
-
-$Bootstrap->getClassLoader()->add('Everon\Mvc\Controller', $Environment->getController());
-$Bootstrap->getClassLoader()->add('Everon\Domain', $Environment->getDomain());
-$Bootstrap->getClassLoader()->add('Everon\View', $Environment->getView());
 $Bootstrap->getClassLoader()->add('Everon\DataMapper', $Environment->getDataMapper());
+$Bootstrap->getClassLoader()->add('Everon\Domain', $Environment->getDomain());
+$Bootstrap->getClassLoader()->add('Everon\Module', $Environment->getModule());
+$Bootstrap->getClassLoader()->add('Everon\View', $Environment->getTheme());
 
 //replace default Router
 $Container->register('Router', function() use ($Factory) {
@@ -52,6 +49,7 @@ $Container->register('ViewManager', function() use ($Factory) {
 
     return $Factory->buildViewManager(
         $compilers,
-        $Factory->getDependencyContainer()->resolve('Environment')->getView()
+        $Factory->getDependencyContainer()->resolve('Environment')->getTheme(),
+        $Factory->getDependencyContainer()->resolve('Environment')->getCacheView()
     );
 });

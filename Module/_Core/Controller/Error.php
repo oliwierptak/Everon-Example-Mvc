@@ -14,4 +14,9 @@ class Error extends MvcController implements Interfaces\MvcController
         //$t = $this->getView()->getTemplate('show', ['error'=>'errrorororoor']);
         //dd($t, $this->getView(), $this->getViewManager()->getDefaultTheme());
     }
+    
+    public function index()
+    {
+        $this->getView()->set('View.body', 'Default View yeah!');
+    }
 }

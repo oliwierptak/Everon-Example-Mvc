@@ -13,7 +13,6 @@ class Error extends MvcController implements Interfaces\MvcController
         $this->getView()->set('error', 'Errrrrrroooooarrrrrr');
         $t = $this->getActionTemplate();
         $this->getView()->set('View.error', $t);
-        dd($t, $this->getView(), $this->getModule()->getView('Test'));
     }
     
     public function index()

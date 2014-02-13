@@ -35,19 +35,19 @@ $Container->register('Request', function() use ($Factory) {
 });
 
 $Container->register('ConnectionManager', function() use ($Factory) {
-    $Factory->getDependencyContainer()->track('ConnectionManager', ['Everon\Config\Manager']);
+    $Factory->getDependencyContainer()->monitor('ConnectionManager', ['Everon\Config\Manager']);
     $DatabaseConfig = $Factory->getDependencyContainer()->resolve('ConfigManager')->getDatabaseConfig();
     return $Factory->buildConnectionManager($DatabaseConfig);
 });
 
 $Container->register('DomainManager', function() use ($Factory) {
-    $Factory->getDependencyContainer()->track('DomainManager', ['Everon\DataMapper\Connection\Manager']);
+    $Factory->getDependencyContainer()->monitor('DomainManager', ['Everon\DataMapper\Connection\Manager']);
     $ConnectionManager = $Factory->getDependencyContainer()->resolve('ConnectionManager');
     return $Factory->buildDomainManager($ConnectionManager);
 });
 
 $Container->register('ViewManager', function() use ($Factory) {
-    $Factory->getDependencyContainer()->track('ViewManager', ['Everon\Config\Manager']);
+    $Factory->getDependencyContainer()->monitor('ViewManager', ['Everon\Config\Manager', 'Everon\Environment']);
     $compilers = $Factory->getDependencyContainer()->resolve('ConfigManager')->getConfigValue('application.view.compilers');
 
     return $Factory->buildViewManager(

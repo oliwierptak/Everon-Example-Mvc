@@ -58,8 +58,8 @@ $Container->register('ViewManager', function() use ($Factory) {
 });
 
 
-//cleanup global state after bootstrap, otherwise phpunit will complain
-unset($CustomSetup);
+//cleanup global state after bootstrap, otherwise phpunit will complain, and $backupGlobalsBlacklist does not work
+unset($CustomExceptionHandler);
 unset($nesting);
 unset($Factory);
 unset($Container);

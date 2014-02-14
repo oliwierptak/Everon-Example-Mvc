@@ -1,11 +1,11 @@
 <?php
-namespace Everon\Module\UserLogin\View;
+namespace Everon\Module\Auth\View;
 
 use Everon\View;
 use Everon\Dependency;
 use Everon\View as DefaultView;
 
-class Auth extends DefaultView
+class Login extends DefaultView
 {
     use Dependency\Injection\Response;
     

@@ -56,3 +56,13 @@ $Container->register('ViewManager', function() use ($Factory) {
         $Factory->getDependencyContainer()->resolve('Environment')->getCacheView()
     );
 });
+
+
+//cleanup global state after bootstrap, otherwise phpunit will complain
+unset($CustomSetup);
+unset($nesting);
+unset($Factory);
+unset($Container);
+unset($Environment);
+
+

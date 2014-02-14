@@ -18,6 +18,5 @@ class Module extends EveronModule implements Interfaces\Module
 {
     public function init()
     {
-        //get a user here read his settings and apply theme
     }
 }

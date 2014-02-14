@@ -7,7 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Everon\Module\UserLogin;
+namespace Everon\Module\Auth;
 
 use Everon\Helper;
 use Everon\Interfaces;
@@ -18,6 +18,5 @@ class Module extends EveronModule implements Interfaces\Module
 {
     public function init()
     {
-        //get a user here read his settings and apply theme
     }
 }

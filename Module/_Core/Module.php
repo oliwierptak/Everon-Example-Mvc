@@ -11,13 +11,12 @@ namespace Everon\Module\_Core;
 
 use Everon\Helper;
 use Everon\Interfaces;
-use Everon\Module as EveronModule;
+use Everon\Module as BasicModule;
 
 
-class Module extends EveronModule implements Interfaces\Module
+class Module extends BasicModule implements Interfaces\Module
 {
     public function init()
     {
-        //get a user here read his settings and apply theme
     }
 }

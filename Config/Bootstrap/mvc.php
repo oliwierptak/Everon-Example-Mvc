@@ -20,7 +20,13 @@ require_once(
 $Bootstrap->getClassLoader()->add('Everon\DataMapper', $Environment->getDataMapper());
 $Bootstrap->getClassLoader()->add('Everon\Domain', $Environment->getDomain());
 $Bootstrap->getClassLoader()->add('Everon\Module', $Environment->getModule());
-$Bootstrap->getClassLoader()->add('Everon\View', $Environment->getTheme());
+
+$Container->register('Response', function() use ($Factory) {
+    $Factory->getDependencyContainer()->monitor('Response', ['Everon\Logger', 'Everon\Http\HeaderCollection']);
+    $Logger = $Factory->getDependencyContainer()->resolve('Logger');
+    $Headers = $Factory->buildHttpHeaderCollection();
+    return $Factory->buildResponse($Logger->getGuid(), $Headers);
+});
 
 //replace default Router
 $Container->register('Router', function() use ($Factory) {

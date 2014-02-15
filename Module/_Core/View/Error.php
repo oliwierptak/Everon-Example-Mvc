@@ -11,7 +11,7 @@ class Error extends DefaultView
     {
         $this->set('error', 'the error message');
     }
-    
+
     public function test()
     {
         $this->set('View.Body', 'no template: test error');

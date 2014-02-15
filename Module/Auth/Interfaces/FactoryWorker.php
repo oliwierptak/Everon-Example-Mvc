@@ -10,6 +10,7 @@
 namespace Everon\Module\Auth\Interfaces;
 
 
-interface Factory
+interface FactoryWorker
 {
+    function buildAuthSession();
 }

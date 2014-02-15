@@ -20,7 +20,7 @@ class Login extends DefaultView
         }
         
         $this->set('canShowInfo', false); //view overpowers controller. canShowInfo will be set to false
-        $this->set('Form', $FormElement); //variable accessible only in Login view
+        $this->set('Form', $FormElement->toArray()); //variable accessible only in Login view
     }
 
     public function submit()
@@ -29,7 +29,7 @@ class Login extends DefaultView
         //User was assigned to this view by Login controller
         $this->set('View.body', 'Logged as: <b>{User.email}</b><br/><br/> Redirecting to <i>{View.redirect_url}</i>');
         
-        $url = $this->url($this->get('View.redirect_url'));
+        $url = $this->get('View.redirect_url');
         $this->getResponse()->addHeader('refresh', '3; url='.$url);
     }
     

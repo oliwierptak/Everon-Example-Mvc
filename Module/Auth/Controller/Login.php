@@ -10,8 +10,8 @@ class Login extends MvcController implements Interfaces\Controller
 {
     public function form()
     {
-        $redirect_url = '/url encoded';
-        $this->getViewManager()->getView('Login')->set('form_action_url', "login/submit/session/adf24ds34/redirect/${redirect_url}?token=something&pif=2457");
+        $url = $this->getUrl('login_submit');
+        $this->getModule()->getView('Login')->set('form_action_url', $url);
         $this->getView()->set('canShowInfo', true);
     }
 
@@ -22,12 +22,13 @@ class Login extends MvcController implements Interfaces\Controller
 
         $User = $this->getDomainManager()->getModel('User')->authenticate($email, $password);
         if ($User === null) {
-            $this->getView()->submitOnError();
+            $this->getView('err')->submitOnError();
             return false;
         }
         else {
             $this->getView()->set('User', $User);
-            $this->getView()->set('View.redirect_url', '/account');
+            $url = $this->getUrl('account');
+            $this->getView()->set('View.redirect_url', $url);
         }
     }
 

@@ -12,7 +12,7 @@ class Repository extends Domain\Repository
     
     /**'
      * @param $email
-     * @return mixed
+     * @return Entity
      */
     public function getByEmail($email)
     {

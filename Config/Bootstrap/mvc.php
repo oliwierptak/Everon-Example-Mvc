@@ -64,4 +64,10 @@ $Container->register('ViewManager', function() use ($Factory) {
     );
 });
 
+$Container->register('Session', function() use ($Factory) {
+    $Logger = $Factory->getDependencyContainer()->resolve('Logger');
+    session_start();
+    return $Factory->buildHttpSession($Logger->getGuid(), $_SESSION);
+});
+
 

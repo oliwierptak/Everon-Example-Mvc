@@ -7,17 +7,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Everon\Module\Auth;
+namespace Everon\Module\Auth\Interfaces;
 
 use Everon\Helper;
-use Everon\Module as EveronModule;
+use Everon\Module as BasicModule;
 
-/**
- * @method Interfaces\FactoryWorker getFactoryWorker()
- */
-class Module extends EveronModule implements \Everon\Interfaces\Module
+
+interface Session
 {
-    public function init()
-    {
-    }
 }

@@ -11,28 +11,14 @@ namespace Everon\Module\Auth;
 
 use Everon\Helper;
 use Everon\FactoryWorker as AbstractFactoryWorker;
+use Everon\Dependency;
 
 class FactoryWorker extends AbstractFactoryWorker implements Interfaces\FactoryWorker
 {
-    /**
-     * @var Interfaces\Collection
-     */
-    protected $MethodCollection = null;
-    
- 
-    public function __construct()
-    {
-        $this->MethodCollection = new Helper\Collection(
-            array_flip(
-                get_class_methods(
-                    get_class($this)
-                )
-            )
-        );    
-    }
+    use Dependency\Injection\Session;
     
     public function buildAuthSession()
     {
-        
+        sd($this->getSession());
     }
 }

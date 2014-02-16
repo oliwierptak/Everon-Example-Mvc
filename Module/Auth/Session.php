@@ -10,14 +10,9 @@
 namespace Everon\Module\Auth;
 
 use Everon\Helper;
-use Everon\Module as EveronModule;
+use Everon\Module as BasicModule;
 
-/**
- * @method Interfaces\FactoryWorker getFactoryWorker()
- */
-class Module extends EveronModule implements \Everon\Interfaces\Module
+
+class Session implements Interfaces\Session
 {
-    public function init()
-    {
-    }
 }

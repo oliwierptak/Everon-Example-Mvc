@@ -6,6 +6,9 @@ use Everon\Dependency;
 use Everon\Interfaces;
 use Everon\Mvc\Controller as MvcController;
 
+/**
+ * @method \Everon\Module\Auth\Module getModule()
+ */
 class Login extends MvcController implements Interfaces\Controller
 {
     public function form()
@@ -26,6 +29,8 @@ class Login extends MvcController implements Interfaces\Controller
             return false;
         }
         else {
+            //$AuthSession = $this->getModule()->getFactoryWorker()->buildAuthSession();
+            //dd($AuthSession);
             $this->getView()->set('User', $User);
             $url = $this->getUrl('account');
             $this->getView()->set('View.redirect_url', $url);

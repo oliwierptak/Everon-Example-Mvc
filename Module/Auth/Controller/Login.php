@@ -4,12 +4,12 @@ namespace Everon\Module\Auth\Controller;
 
 use Everon\Dependency;
 use Everon\Interfaces;
-use Everon\Mvc\Controller as MvcController;
+use Everon\Mvc;
 
 /**
  * @method \Everon\Module\Auth\Module getModule()
  */
-class Login extends MvcController implements Interfaces\Controller
+class Login extends Mvc\Controller implements Mvc\Interfaces\Controller
 {
     public function form()
     {

@@ -4,9 +4,9 @@ namespace Everon\Module\UserManagement\Controller;
 
 use Everon\Dependency;
 use Everon\Interfaces;
-use Everon\Mvc\Controller as MvcController;
+use Everon\Mvc;
 
-class Admin extends MvcController implements Interfaces\Controller
+class Admin extends Mvc\Controller implements Mvc\Interfaces\Controller
 {
 
 }

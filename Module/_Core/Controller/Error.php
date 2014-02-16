@@ -3,10 +3,9 @@
 namespace Everon\Module\_Core\Controller;
 
 use Everon\Dependency;
-use Everon\Interfaces;
-use Everon\Mvc\Controller as MvcController;
+use Everon\Mvc;
 
-class Error extends MvcController implements Interfaces\MvcController
+class Error extends Mvc\Controller implements Mvc\Interfaces\Controller
 {
     public function show()
     {

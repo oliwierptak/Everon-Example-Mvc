@@ -1,5 +1,5 @@
 <?php
-namespace Everon\Module\_Core\View;
+namespace Everon\Module\_CoreMvc\View;
 
 use Everon\View;
 use Everon\Dependency;

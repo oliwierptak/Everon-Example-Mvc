@@ -9,14 +9,10 @@
  */
 namespace Everon\Module\_Core;
 
-use Everon\Helper;
 use Everon\Interfaces;
 use Everon\Module as BasicModule;
 
 
 class Module extends BasicModule implements Interfaces\Module
 {
-    public function init()
-    {
-    }
 }

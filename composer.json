@@ -1,6 +1,6 @@
 {
     "name": "everon/everon-example-mvc",
-    "description": "Mvc application example for Everon framework",
+    "description": "MVC application example for Everon framework",
     "license": "MIT",
     "authors": [{
         "name": "Oliwier Ptak",

@@ -16,5 +16,3 @@ implode(DIRECTORY_SEPARATOR,
  * @var Interfaces\DependencyContainer $Container
  * @var Interfaces\Factory $Factory
  */
-
-$Bootstrap->getClassLoader()->add('Everon\Console\Controller', $Environment->getController().'Console'.DIRECTORY_SEPARATOR);

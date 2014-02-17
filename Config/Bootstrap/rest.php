@@ -21,3 +21,10 @@ $Bootstrap->getClassLoader()->add('Everon\Rest\Controller', $Environment->getCon
 $Bootstrap->getClassLoader()->add('Everon\DataMapper', $Environment->getDataMapper());
 $Bootstrap->getClassLoader()->add('Everon\Domain', $Environment->getDomain());
 $Bootstrap->getClassLoader()->add('Everon\Module', $Environment->getModule());
+
+//replace default Router
+$Container->register('Router', function() use ($Factory) {
+    $RouteConfig = $Factory->getDependencyContainer()->resolve('ConfigManager')->getConfigByName('router');
+    $RequestValidator = $Factory->buildRequestValidator();
+    return $Factory->buildRouter($RouteConfig, $RequestValidator, 'Everon\Rest');
+});

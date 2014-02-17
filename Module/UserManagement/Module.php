@@ -9,12 +9,14 @@
  */
 namespace Everon\Module\UserManagement;
 
-use Everon\Helper;
-use Everon\Interfaces;
-use Everon\Module as EveronModule;
+use Everon\Interfaces\FactoryWorker;
+use Everon\Module\Interfaces;
+use Everon\Module\Mvc as MvcModule;
 
-
-class Module extends EveronModule implements Interfaces\Module
+/**
+ * @method FactoryWorker getFactoryWorker()
+ */
+class Module extends MvcModule implements Interfaces\Mvc
 {
     public function init()
     {

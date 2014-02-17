@@ -3,19 +3,17 @@
 namespace Everon\Module\_Core\Controller;
 
 use Everon\Dependency;
-use Everon\Mvc;
+use Everon\Interfaces;
 
-class Error extends Mvc\Controller implements Mvc\Interfaces\Controller
+class Error extends \Everon\Console\Controller implements Interfaces\Controller
 {
     public function show()
     {
-        $this->getView()->set('error', 'Errrrrrroooooarrrrrr');
-        $t = $this->getActionTemplate();
-        $this->getView()->set('View.error', $t);
+        die('error.show');
     }
     
     public function index()
     {
-        $this->getView()->set('View.body', 'Default View yeah!');
+        die('error.index');
     }
 }

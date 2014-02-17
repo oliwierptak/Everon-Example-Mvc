@@ -7,16 +7,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Everon\Module\Auth;
+namespace Everon\Module\_CoreMvc;
 
-use Everon\Interfaces\FactoryWorker;
 use Everon\Module\Interfaces;
 use Everon\Module\Mvc as MvcModule;
 
-/**
- * @method FactoryWorker getFactoryWorker()
- */
+
 class Module extends MvcModule implements Interfaces\Mvc
 {
-
 }

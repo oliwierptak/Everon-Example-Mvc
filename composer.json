@@ -9,11 +9,16 @@
     "minimum-stability": "dev",
     "require": {
         "everon/everon": "master",
+		"raveren/kint": "dev-master",
         "php": "~5.5"
     },
     "autoload": {
         "psr-4": {
-            "Everon\\": "vendor/everon/everon/src/"
+            "Everon\\": "vendor/everon/everon/src/Everon",
+            "Everon\\DataMapper\\": "DataMapper",
+            "Everon\\Domain\\": "Domain",
+            "Everon\\Module\\": "Module",
+            "Everon\\View\\": "Theme"
         }
     },
     "repositories": [

@@ -23,10 +23,10 @@ $Bootstrap->getClassLoader()->add('Everon\Module', $Environment->getModule());
 $Bootstrap->getClassLoader()->add('Everon\View', $Environment->getTheme());
 
 $Container->register('Response', function() use ($Factory) {
-    $Factory->getDependencyContainer()->monitor('Response', ['Everon\Logger', 'Everon\Http\HeaderCollection']);
-    $Logger = $Factory->getDependencyContainer()->resolve('Logger');
+    $Factory->getDependencyContainer()->monitor('Response', ['Everon\RequestIdentifier']);
+    $RequestIdentifier = $Factory->getDependencyContainer()->resolve('RequestIdentifier');
     $Headers = $Factory->buildHttpHeaderCollection();
-    return $Factory->buildHttpResponse($Logger->getGuid(), $Headers);
+    return $Factory->buildHttpResponse($RequestIdentifier->getValue(), $Headers);
 });
 
 //replace default Router
@@ -65,9 +65,10 @@ $Container->register('ViewManager', function() use ($Factory) {
 });
 
 $Container->register('Session', function() use ($Factory) {
-    $Logger = $Factory->getDependencyContainer()->resolve('Logger');
+    $Factory->getDependencyContainer()->monitor('Session', ['Everon\RequestIdentifier']);
+    $RequestIdentifier = $Factory->getDependencyContainer()->resolve('RequestIdentifier');
     session_start();
-    return $Factory->buildHttpSession($Logger->getGuid(), $_SESSION);
+    return $Factory->buildHttpSession($RequestIdentifier->getValue(), $_SESSION);
 });
 
 
